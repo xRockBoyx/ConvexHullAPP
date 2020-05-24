@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pxm-A6-wxl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="ConvexHull" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dyz-Ht-aqj">
+                                <rect key="frame" x="103.5" y="431" width="207" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入點的個數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDT-Wi-fIU">
+                                <rect key="frame" x="101" y="345" width="212.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-pG-FbF">
+                                <rect key="frame" x="145" y="515" width="124" height="67"/>
+                                <state key="normal" title="作圖！"/>
+                                <connections>
+                                    <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lwY-MK-zud"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8b8-pG-FbF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Wy-xc-5Sh"/>
+                            <constraint firstItem="KDT-Wi-fIU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3uY-9Y-zMp"/>
+                            <constraint firstItem="Dyz-Ht-aqj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5aS-Cs-zqy"/>
+                            <constraint firstItem="8b8-pG-FbF" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="Oiy-pQ-2lq"/>
+                            <constraint firstItem="Dyz-Ht-aqj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Pyr-Ub-J0h"/>
+                            <constraint firstItem="Dyz-Ht-aqj" firstAttribute="top" secondItem="KDT-Wi-fIU" secondAttribute="bottom" constant="50" id="Wjx-bG-lI0"/>
+                            <constraint firstItem="Dyz-Ht-aqj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XQb-uH-8ke"/>
+                            <constraint firstItem="8b8-pG-FbF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="dhr-QM-TJg"/>
+                            <constraint firstItem="8b8-pG-FbF" firstAttribute="top" secondItem="Dyz-Ht-aqj" secondAttribute="bottom" constant="50" id="h0k-jr-axg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TMG-yw-Lg9"/>
+                    <connections>
+                        <outlet property="Titlelabel" destination="KDT-Wi-fIU" id="fBM-ct-GHl"/>
+                        <outlet property="input" destination="Dyz-Ht-aqj" id="H7M-Gp-jbn"/>
+                        <segue destination="IyU-rV-cuq" kind="show" identifier="next" id="QT0-p0-jGF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--Convex Hull View Controller-->
+        <scene sceneID="Z45-t6-2pW">
+            <objects>
+                <viewController id="IyU-rV-cuq" customClass="ConvexHullViewController" customModule="ConvexHull" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kgb-10-1yN" customClass="DrawView" customModule="ConvexHull" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Dng-uo-btA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jsh-zf-luT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppD-pF-GYy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4hi-dV-ObR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pxm-A6-wxl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b0I-4I-fLL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="T1G-x3-zK3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gis-u1-pyt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+</document>
